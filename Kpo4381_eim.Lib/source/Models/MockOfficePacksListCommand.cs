@@ -58,7 +58,6 @@ namespace Kpo4381.eim.Lib
                     price = 9
                 };
                 _officepacksList.Add(officepacks);
-
             }
         }
     }
