@@ -36,9 +36,9 @@
             this.mnOpenOfficePacks = new System.Windows.Forms.ToolStripMenuItem();
             this.SStatus = new System.Windows.Forms.StatusStrip();
             this.dgvMockOfficePacksListCommand = new System.Windows.Forms.DataGridView();
-            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.показатьЛогуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.показатьПутьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mmSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnLogPath = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnDataFileName = new System.Windows.Forms.ToolStripMenuItem();
             this.MMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockOfficePacksListCommand)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             this.MMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mmFile,
             this.mmOfficePacks,
-            this.настройкиToolStripMenuItem});
+            this.mmSettings});
             this.MMenu.Location = new System.Drawing.Point(0, 0);
             this.MMenu.Name = "MMenu";
             this.MMenu.Size = new System.Drawing.Size(1200, 33);
@@ -115,28 +115,28 @@
             this.dgvMockOfficePacksListCommand.Size = new System.Drawing.Size(751, 323);
             this.dgvMockOfficePacksListCommand.TabIndex = 2;
             // 
-            // настройкиToolStripMenuItem
+            // mmSettings
             // 
-            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.показатьЛогуToolStripMenuItem,
-            this.показатьПутьToolStripMenuItem});
-            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(116, 29);
-            this.настройкиToolStripMenuItem.Text = "Настройки";
+            this.mmSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnLogPath,
+            this.mnDataFileName});
+            this.mmSettings.Name = "mmSettings";
+            this.mmSettings.Size = new System.Drawing.Size(130, 29);
+            this.mmSettings.Text = "3&.Настройки";
             // 
-            // показатьЛогуToolStripMenuItem
+            // mnLogPath
             // 
-            this.показатьЛогуToolStripMenuItem.Name = "показатьЛогуToolStripMenuItem";
-            this.показатьЛогуToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.показатьЛогуToolStripMenuItem.Text = "Показать логу";
-            this.показатьЛогуToolStripMenuItem.Click += new System.EventHandler(this.показатьЛогуToolStripMenuItem_Click);
+            this.mnLogPath.Name = "mnLogPath";
+            this.mnLogPath.Size = new System.Drawing.Size(270, 34);
+            this.mnLogPath.Text = "Показать логу";
+            this.mnLogPath.Click += new System.EventHandler(this.mnLogPath_Click);
             // 
-            // показатьПутьToolStripMenuItem
+            // mnDataFileName
             // 
-            this.показатьПутьToolStripMenuItem.Name = "показатьПутьToolStripMenuItem";
-            this.показатьПутьToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.показатьПутьToolStripMenuItem.Text = "Показать путь";
-            this.показатьПутьToolStripMenuItem.Click += new System.EventHandler(this.показатьПутьToolStripMenuItem_Click);
+            this.mnDataFileName.Name = "mnDataFileName";
+            this.mnDataFileName.Size = new System.Drawing.Size(270, 34);
+            this.mnDataFileName.Text = "Показать путь";
+            this.mnDataFileName.Click += new System.EventHandler(this.mnDataFileName_Click);
             // 
             // FrmMain
             // 
@@ -168,9 +168,9 @@
         private System.Windows.Forms.DataGridView dgvMockOfficePacksListCommand;
         private System.Windows.Forms.ToolStripMenuItem mmOfficePacks;
         private System.Windows.Forms.ToolStripMenuItem mnOpenOfficePacks;
-        private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem показатьЛогуToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem показатьПутьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mmSettings;
+        private System.Windows.Forms.ToolStripMenuItem mnLogPath;
+        private System.Windows.Forms.ToolStripMenuItem mnDataFileName;
     }
 }
 

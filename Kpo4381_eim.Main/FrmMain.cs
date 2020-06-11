@@ -71,12 +71,12 @@ namespace Kpo4381.eim.Main
             frmOfficePacks.ShowDialog();
         }
 
-        private void показатьЛогуToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnLogPath_Click(object sender, EventArgs e)
         {
             MessageBox.Show(AppGlobalSettings.logPath);
         }
 
-        private void показатьПутьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnDataFileName_Click(object sender, EventArgs e)
         {
             MessageBox.Show(AppGlobalSettings.dataFileName);
         }
