@@ -14,6 +14,9 @@ namespace Kpo4381.eim.Main
         [STAThread]
         static void Main()
         {
+
+            Kpo4381.eim.Lib.AppGlobalSettings.Initialize();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmMain());

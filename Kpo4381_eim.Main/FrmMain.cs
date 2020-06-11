@@ -34,12 +34,16 @@ namespace Kpo4381.eim.Main
                 //Вызов исключения "Метод не реализован"
                 //  throw new NotImplementedException();
                 //Вызов базового исключения
-              //  throw new Exception("Неправильные входные параметры");
+                //  throw new Exception("Неправильные входные параметры");
 
 
-                MockOfficePacksListCommand loader = new MockOfficePacksListCommand();
+                //  MockOfficePacksListCommand loader = new MockOfficePacksListCommand();
+
+            // //    IOfficePacksListLoader loader = new OfficePacksListSplitFileLoader(AppGlobalSettings.dataFileName);
+                IOfficePacksListLoader loader = new OfficePacksListTestLoader();
                 loader.Execute();
-                officePacksList = loader.officepacksList;
+
+                officePacksList = loader.officePacksList;
                 bsOfficePacks.DataSource = officePacksList;
                 dgvMockOfficePacksListCommand.DataSource = bsOfficePacks;
 
@@ -65,6 +69,16 @@ namespace Kpo4381.eim.Main
             OfficePacks officePacks = (bsOfficePacks.Current as OfficePacks);
             frmOfficePacks.SetOfficePacks(officePacks);
             frmOfficePacks.ShowDialog();
+        }
+
+        private void показатьЛогуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(AppGlobalSettings.logPath);
+        }
+
+        private void показатьПутьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(AppGlobalSettings.dataFileName);
         }
     }
 }

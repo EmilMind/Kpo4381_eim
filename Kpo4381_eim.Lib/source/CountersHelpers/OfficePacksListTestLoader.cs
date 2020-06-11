@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace Kpo4381.eim.Lib
 {
-    public class MockOfficePacksListCommand
+    public class OfficePacksListTestLoader: IOfficePacksListLoader
     {
-        public MockOfficePacksListCommand()
+        public OfficePacksListTestLoader()
         {
             this._officepacksList = new List<OfficePacks>();
 
         }
         private readonly string _dataFileName = "";
         private List<OfficePacks> _officepacksList = null;
+        private LoadStatus _status = LoadStatus.None;
+                
+        public LoadStatus status
+        {
+            get { return _status; }
+        }
 
         public List<OfficePacks> officePacksList
         {
@@ -22,8 +28,8 @@ namespace Kpo4381.eim.Lib
         }
         public void Execute()
         {
-           // throw new NotImplementedException();
-           // throw new Exception("Неправильные входные параметры");
+            // throw new NotImplementedException();
+            // throw new Exception("Неправильные входные параметры");
 
             //Фигурная скобка для ограничения области видимости переменной employee
             {
@@ -54,7 +60,7 @@ namespace Kpo4381.eim.Lib
                 {
                     name = "StarOffice",
                     vendor = "Sun",
-                    composition =4,
+                    composition = 4,
                     price = 9
                 };
                 _officepacksList.Add(officepacks);

@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -44,6 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="source\Common\AppGlobalSettings.cs" />
+    <Compile Include="source\CountersHelpers\ILoadOfficePacksListCommand.cs" />
+    <Compile Include="source\CountersHelpers\OfficePacksListSplitFileLoader.cs" />
+    <Compile Include="source\CountersHelpers\OfficePacksListTestLoader.cs" />
     <Compile Include="source\FrmOfficePacks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,6 +58,7 @@
     <Compile Include="source\Log\LogUtility.cs" />
     <Compile Include="source\Models\MockOfficePacksListCommand.cs" />
     <Compile Include="source\Models\OfficePacks.cs" />
+    <Compile Include="source\Utility\AppConfigUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="source\FrmOfficePacks.resx">
