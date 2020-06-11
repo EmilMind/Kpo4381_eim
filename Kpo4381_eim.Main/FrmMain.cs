@@ -17,10 +17,24 @@ namespace Kpo4381.eim.Main
         public FrmMain()
         {
             InitializeComponent();
+
+            switch (AppGlobalSettings.officePacksFactory)
+            {
+                case "test":
+                    factory = new OfficePacksTestFactory();
+                    break;
+                case "stlitFile":
+                    factory = new OfficePacksSplitFileFactory();
+                    break;
+                default:
+                    factory = new OfficePacksTestFactory();
+                    break;
+            }
         }
 
         private List<OfficePacks> officePacksList = null;
         private BindingSource bsOfficePacks = new BindingSource();
+        private IOfficePacksFactory factory;
 
         private void mnExit_Click(object sender, EventArgs e)
         {
@@ -31,16 +45,8 @@ namespace Kpo4381.eim.Main
         {
             try
             {
-                //Вызов исключения "Метод не реализован"
-                //  throw new NotImplementedException();
-                //Вызов базового исключения
-                //  throw new Exception("Неправильные входные параметры");
 
-
-                //  MockOfficePacksListCommand loader = new MockOfficePacksListCommand();
-
-            // //    IOfficePacksListLoader loader = new OfficePacksListSplitFileLoader(AppGlobalSettings.dataFileName);
-                IOfficePacksListLoader loader = new OfficePacksListTestLoader();
+                IOfficePacksListLoader loader = factory.CreateOfficePacksListLoader();
                 loader.Execute();
 
                 officePacksList = loader.officePacksList;
@@ -79,6 +85,12 @@ namespace Kpo4381.eim.Main
         private void mnDataFileName_Click(object sender, EventArgs e)
         {
             MessageBox.Show(AppGlobalSettings.dataFileName);
+        }
+
+        private void nmSaver_Click(object sender, EventArgs e)
+        {
+            IOfficePacksListSaver saver = factory.CreateOfficePacksListSaver();
+            saver.SaveFile(officePacksList);
         }
     }
 }

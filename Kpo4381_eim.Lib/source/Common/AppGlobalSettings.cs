@@ -20,12 +20,25 @@ namespace Kpo4381.eim.Lib
         {
             get { return _dataFileName; }
         }
-                
+        private static string _officePacksFactory;
+        public static string officePacksFactory
+        {
+            get { return _officePacksFactory; }
+        }
+
+        private static string _saveFileName;
+        public static string saveFileName
+        {
+            get { return _saveFileName; }
+        }
+
         public static void Initialize()
         {
             AppConfigUtility appConfigUtility = new AppConfigUtility();
             _logPath = appConfigUtility.AppSettings("logPath");
             _dataFileName = appConfigUtility.AppSettings("dataFileName");
+            _officePacksFactory = appConfigUtility.AppSettings("typeFactory");
+            _saveFileName = appConfigUtility.AppSettings("saveFileName");
         }
     }
 }

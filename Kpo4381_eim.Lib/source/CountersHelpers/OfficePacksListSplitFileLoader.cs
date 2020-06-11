@@ -36,9 +36,9 @@ namespace Kpo4381.eim.Lib
         //       _dataFileName = dataFileName;
         //         _searchProjectList = new List<SearchProject>();
         //     }
-        public OfficePacksListSplitFileLoader(string dataFileName)
+        public OfficePacksListSplitFileLoader()
         {
-            _dataFileName = dataFileName;
+            _dataFileName = AppGlobalSettings.dataFileName;
             _officePacksList = new List<OfficePacks>();
         }
 

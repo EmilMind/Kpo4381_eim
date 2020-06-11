@@ -34,11 +34,12 @@
             this.mnOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.mmOfficePacks = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpenOfficePacks = new System.Windows.Forms.ToolStripMenuItem();
-            this.SStatus = new System.Windows.Forms.StatusStrip();
-            this.dgvMockOfficePacksListCommand = new System.Windows.Forms.DataGridView();
             this.mmSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.mnLogPath = new System.Windows.Forms.ToolStripMenuItem();
             this.mnDataFileName = new System.Windows.Forms.ToolStripMenuItem();
+            this.SStatus = new System.Windows.Forms.StatusStrip();
+            this.dgvMockOfficePacksListCommand = new System.Windows.Forms.DataGridView();
+            this.nmSaver = new System.Windows.Forms.ToolStripMenuItem();
             this.MMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockOfficePacksListCommand)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,7 @@
             this.mmSettings});
             this.MMenu.Location = new System.Drawing.Point(0, 0);
             this.MMenu.Name = "MMenu";
-            this.MMenu.Size = new System.Drawing.Size(1200, 33);
+            this.MMenu.Size = new System.Drawing.Size(777, 33);
             this.MMenu.TabIndex = 0;
             this.MMenu.Text = "menuStrip1";
             // 
@@ -61,7 +62,8 @@
             // 
             this.mmFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnExit,
-            this.mnOpen});
+            this.mnOpen,
+            this.nmSaver});
             this.mmFile.Name = "mmFile";
             this.mmFile.Size = new System.Drawing.Size(83, 29);
             this.mmFile.Text = "1&.Файл";
@@ -69,14 +71,14 @@
             // mnExit
             // 
             this.mnExit.Name = "mnExit";
-            this.mnExit.Size = new System.Drawing.Size(184, 34);
+            this.mnExit.Size = new System.Drawing.Size(270, 34);
             this.mnExit.Text = "Выход";
             this.mnExit.Click += new System.EventHandler(this.mnExit_Click);
             // 
             // mnOpen
             // 
             this.mnOpen.Name = "mnOpen";
-            this.mnOpen.Size = new System.Drawing.Size(184, 34);
+            this.mnOpen.Size = new System.Drawing.Size(270, 34);
             this.mnOpen.Text = "Открыть";
             this.mnOpen.Click += new System.EventHandler(this.mnOpen_Click);
             // 
@@ -95,13 +97,36 @@
             this.mnOpenOfficePacks.Text = "Открыть данные офисных пакетов";
             this.mnOpenOfficePacks.Click += new System.EventHandler(this.mnOpenOfficePacks_Click);
             // 
+            // mmSettings
+            // 
+            this.mmSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnLogPath,
+            this.mnDataFileName});
+            this.mmSettings.Name = "mmSettings";
+            this.mmSettings.Size = new System.Drawing.Size(130, 29);
+            this.mmSettings.Text = "3&.Настройки";
+            // 
+            // mnLogPath
+            // 
+            this.mnLogPath.Name = "mnLogPath";
+            this.mnLogPath.Size = new System.Drawing.Size(230, 34);
+            this.mnLogPath.Text = "Показать логу";
+            this.mnLogPath.Click += new System.EventHandler(this.mnLogPath_Click);
+            // 
+            // mnDataFileName
+            // 
+            this.mnDataFileName.Name = "mnDataFileName";
+            this.mnDataFileName.Size = new System.Drawing.Size(230, 34);
+            this.mnDataFileName.Text = "Показать путь";
+            this.mnDataFileName.Click += new System.EventHandler(this.mnDataFileName_Click);
+            // 
             // SStatus
             // 
             this.SStatus.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.SStatus.Location = new System.Drawing.Point(0, 670);
+            this.SStatus.Location = new System.Drawing.Point(0, 486);
             this.SStatus.Name = "SStatus";
             this.SStatus.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.SStatus.Size = new System.Drawing.Size(1200, 22);
+            this.SStatus.Size = new System.Drawing.Size(777, 22);
             this.SStatus.TabIndex = 1;
             this.SStatus.Text = "statusStrip1";
             // 
@@ -115,34 +140,18 @@
             this.dgvMockOfficePacksListCommand.Size = new System.Drawing.Size(751, 323);
             this.dgvMockOfficePacksListCommand.TabIndex = 2;
             // 
-            // mmSettings
+            // nmSaver
             // 
-            this.mmSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnLogPath,
-            this.mnDataFileName});
-            this.mmSettings.Name = "mmSettings";
-            this.mmSettings.Size = new System.Drawing.Size(130, 29);
-            this.mmSettings.Text = "3&.Настройки";
-            // 
-            // mnLogPath
-            // 
-            this.mnLogPath.Name = "mnLogPath";
-            this.mnLogPath.Size = new System.Drawing.Size(270, 34);
-            this.mnLogPath.Text = "Показать логу";
-            this.mnLogPath.Click += new System.EventHandler(this.mnLogPath_Click);
-            // 
-            // mnDataFileName
-            // 
-            this.mnDataFileName.Name = "mnDataFileName";
-            this.mnDataFileName.Size = new System.Drawing.Size(270, 34);
-            this.mnDataFileName.Text = "Показать путь";
-            this.mnDataFileName.Click += new System.EventHandler(this.mnDataFileName_Click);
+            this.nmSaver.Name = "nmSaver";
+            this.nmSaver.Size = new System.Drawing.Size(270, 34);
+            this.nmSaver.Text = "Сохранить";
+            this.nmSaver.Click += new System.EventHandler(this.nmSaver_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(777, 508);
             this.Controls.Add(this.dgvMockOfficePacksListCommand);
             this.Controls.Add(this.SStatus);
             this.Controls.Add(this.MMenu);
@@ -171,6 +180,7 @@
         private System.Windows.Forms.ToolStripMenuItem mmSettings;
         private System.Windows.Forms.ToolStripMenuItem mnLogPath;
         private System.Windows.Forms.ToolStripMenuItem mnDataFileName;
+        private System.Windows.Forms.ToolStripMenuItem nmSaver;
     }
 }
 
