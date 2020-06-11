@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kpo4381.eim.Lib;
 using Kpo4381.eim.Lib.source;
+using Castle.Windsor;
 
 namespace Kpo4381.eim.Main
 {
@@ -17,24 +18,10 @@ namespace Kpo4381.eim.Main
         public FrmMain()
         {
             InitializeComponent();
-
-            switch (AppGlobalSettings.officePacksFactory)
-            {
-                case "test":
-                    factory = new OfficePacksTestFactory();
-                    break;
-                case "stlitFile":
-                    factory = new OfficePacksSplitFileFactory();
-                    break;
-                default:
-                    factory = new OfficePacksTestFactory();
-                    break;
-            }
         }
 
         private List<OfficePacks> officePacksList = null;
         private BindingSource bsOfficePacks = new BindingSource();
-        private IOfficePacksFactory factory;
 
         private void mnExit_Click(object sender, EventArgs e)
         {
@@ -46,14 +33,11 @@ namespace Kpo4381.eim.Main
             try
             {
 
-                IOfficePacksListLoader loader = factory.CreateOfficePacksListLoader();
+                IOfficePacksListLoader loader = IOCcontainer.container.Resolve<IOfficePacksListLoader>();
                 loader.Execute();
-
                 officePacksList = loader.officePacksList;
                 bsOfficePacks.DataSource = officePacksList;
                 dgvMockOfficePacksListCommand.DataSource = bsOfficePacks;
-
-
             }
             //обработка исключения "Метод не реализован"
             catch (NotImplementedException ex)
@@ -89,7 +73,7 @@ namespace Kpo4381.eim.Main
 
         private void nmSaver_Click(object sender, EventArgs e)
         {
-            IOfficePacksListSaver saver = factory.CreateOfficePacksListSaver();
+            IOfficePacksListSaver saver = IOCcontainer.container.Resolve<IOfficePacksListSaver>();
             saver.SaveFile(officePacksList);
         }
     }
