@@ -6,7 +6,8 @@ namespace Kpo4381.eim.Lib
     {
         List<OfficePacks> officePacksList { get; }
         LoadStatus status { get; }
-
+        Delegate.OnStatusChangedDelegate onStatusChangedDelegate { get; }
+        void SetOnStatusChanged(Delegate.OnStatusChangedDelegate onStatusChanged);
         void Execute();
     }
 }

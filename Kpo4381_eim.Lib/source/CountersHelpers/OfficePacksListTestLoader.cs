@@ -26,6 +26,16 @@ namespace Kpo4381.eim.Lib
         {
             get { return _officepacksList; }
         }
+        private Delegate.OnStatusChangedDelegate _onStatusChangedDelegate = null;
+        public Delegate.OnStatusChangedDelegate onStatusChangedDelegate
+        {
+            get { return _onStatusChangedDelegate; }
+        }
+
+        public void SetOnStatusChanged(Delegate.OnStatusChangedDelegate onStatusChanged)
+        {
+            _onStatusChangedDelegate = onStatusChanged;
+        }
         public void Execute()
         {
             // throw new NotImplementedException();

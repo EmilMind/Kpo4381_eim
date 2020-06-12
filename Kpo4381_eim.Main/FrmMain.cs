@@ -22,6 +22,10 @@ namespace Kpo4381.eim.Main
 
         private List<OfficePacks> officePacksList = null;
         private BindingSource bsOfficePacks = new BindingSource();
+        private void updateStatus(LoadStatus status)
+        {
+            SSlblStatus.Text = status.ToString();
+        }
 
         private void mnExit_Click(object sender, EventArgs e)
         {
@@ -32,8 +36,8 @@ namespace Kpo4381.eim.Main
         {
             try
             {
-
-                IOfficePacksListLoader loader = IOCcontainer.container.Resolve<IOfficePacksListLoader>();
+                IOCcontainer.container.Resolve<IOfficePacksListLoader>().SetOnStatusChanged(updateStatus); 
+                IOfficePacksListLoader loader = IOCcontainer.container.Resolve<IOfficePacksListLoader>();                
                 loader.Execute();
                 officePacksList = loader.officePacksList;
                 bsOfficePacks.DataSource = officePacksList;

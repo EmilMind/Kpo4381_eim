@@ -31,15 +31,21 @@ namespace Kpo4381.eim.Lib
         {
             get { return _status; }
         }
-        //     public SearchProjectListSplitFileLoader(string dataFileName)
-        //     {
-        //       _dataFileName = dataFileName;
-        //         _searchProjectList = new List<SearchProject>();
-        //     }
         public OfficePacksListSplitFileLoader()
         {
             _dataFileName = AppGlobalSettings.dataFileName;
             _officePacksList = new List<OfficePacks>();
+        }
+
+        private Delegate.OnStatusChangedDelegate _onStatusChangedDelegate = null;
+        public Delegate.OnStatusChangedDelegate onStatusChangedDelegate
+        {
+            get { return _onStatusChangedDelegate; }
+        }
+
+        public void SetOnStatusChanged(Delegate.OnStatusChangedDelegate onStatusChanged)
+        {
+            _onStatusChangedDelegate = onStatusChanged;
         }
 
         public void Execute()
@@ -50,6 +56,7 @@ namespace Kpo4381.eim.Lib
             {
 
                 _status = LoadStatus.FileNameIsEmpty;
+                onStatusChangedDelegate?.Invoke(_status);
                 throw new Exception("Имя файла отсутствует");
 
             }
@@ -57,6 +64,7 @@ namespace Kpo4381.eim.Lib
             {
 
                 _status = LoadStatus.FileNotExists;
+                onStatusChangedDelegate?.Invoke(_status);
                 throw new FileNotFoundException();
             }
 
@@ -83,11 +91,13 @@ namespace Kpo4381.eim.Lib
                     {
                         LogUtility.ErrorLog(ex);
                         _status = LoadStatus.GeneralError;
+                        onStatusChangedDelegate?.Invoke(_status);
                     }
 
                 }
             }
             _status = LoadStatus.Success;
+            onStatusChangedDelegate?.Invoke(_status);
         }
     }
 }

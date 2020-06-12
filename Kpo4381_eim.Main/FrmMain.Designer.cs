@@ -32,6 +32,7 @@
             this.mmFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.nmSaver = new System.Windows.Forms.ToolStripMenuItem();
             this.mmOfficePacks = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpenOfficePacks = new System.Windows.Forms.ToolStripMenuItem();
             this.mmSettings = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,8 +40,9 @@
             this.mnDataFileName = new System.Windows.Forms.ToolStripMenuItem();
             this.SStatus = new System.Windows.Forms.StatusStrip();
             this.dgvMockOfficePacksListCommand = new System.Windows.Forms.DataGridView();
-            this.nmSaver = new System.Windows.Forms.ToolStripMenuItem();
+            this.SSlblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.MMenu.SuspendLayout();
+            this.SStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockOfficePacksListCommand)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +56,7 @@
             this.mmSettings});
             this.MMenu.Location = new System.Drawing.Point(0, 0);
             this.MMenu.Name = "MMenu";
-            this.MMenu.Size = new System.Drawing.Size(777, 33);
+            this.MMenu.Size = new System.Drawing.Size(777, 36);
             this.MMenu.TabIndex = 0;
             this.MMenu.Text = "menuStrip1";
             // 
@@ -71,16 +73,23 @@
             // mnExit
             // 
             this.mnExit.Name = "mnExit";
-            this.mnExit.Size = new System.Drawing.Size(270, 34);
+            this.mnExit.Size = new System.Drawing.Size(200, 34);
             this.mnExit.Text = "Выход";
             this.mnExit.Click += new System.EventHandler(this.mnExit_Click);
             // 
             // mnOpen
             // 
             this.mnOpen.Name = "mnOpen";
-            this.mnOpen.Size = new System.Drawing.Size(270, 34);
+            this.mnOpen.Size = new System.Drawing.Size(200, 34);
             this.mnOpen.Text = "Открыть";
             this.mnOpen.Click += new System.EventHandler(this.mnOpen_Click);
+            // 
+            // nmSaver
+            // 
+            this.nmSaver.Name = "nmSaver";
+            this.nmSaver.Size = new System.Drawing.Size(200, 34);
+            this.nmSaver.Text = "Сохранить";
+            this.nmSaver.Click += new System.EventHandler(this.nmSaver_Click);
             // 
             // mmOfficePacks
             // 
@@ -123,10 +132,12 @@
             // SStatus
             // 
             this.SStatus.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.SStatus.Location = new System.Drawing.Point(0, 486);
+            this.SStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SSlblStatus});
+            this.SStatus.Location = new System.Drawing.Point(0, 480);
             this.SStatus.Name = "SStatus";
             this.SStatus.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.SStatus.Size = new System.Drawing.Size(777, 22);
+            this.SStatus.Size = new System.Drawing.Size(777, 28);
             this.SStatus.TabIndex = 1;
             this.SStatus.Text = "statusStrip1";
             // 
@@ -140,12 +151,10 @@
             this.dgvMockOfficePacksListCommand.Size = new System.Drawing.Size(751, 323);
             this.dgvMockOfficePacksListCommand.TabIndex = 2;
             // 
-            // nmSaver
+            // SSlblStatus
             // 
-            this.nmSaver.Name = "nmSaver";
-            this.nmSaver.Size = new System.Drawing.Size(270, 34);
-            this.nmSaver.Text = "Сохранить";
-            this.nmSaver.Click += new System.EventHandler(this.nmSaver_Click);
+            this.SSlblStatus.Name = "SSlblStatus";
+            this.SSlblStatus.Size = new System.Drawing.Size(0, 21);
             // 
             // FrmMain
             // 
@@ -161,6 +170,8 @@
             this.Text = "КПО:4381:Миндубаев";
             this.MMenu.ResumeLayout(false);
             this.MMenu.PerformLayout();
+            this.SStatus.ResumeLayout(false);
+            this.SStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockOfficePacksListCommand)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -181,6 +192,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnLogPath;
         private System.Windows.Forms.ToolStripMenuItem mnDataFileName;
         private System.Windows.Forms.ToolStripMenuItem nmSaver;
+        private System.Windows.Forms.ToolStripStatusLabel SSlblStatus;
     }
 }
 
