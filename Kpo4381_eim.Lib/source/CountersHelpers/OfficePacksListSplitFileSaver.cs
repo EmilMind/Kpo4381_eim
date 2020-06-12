@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kpo4381.eim.Lib
 {
-    public class OfficePacksListSplitFileSaver : IOfficePacksListSaver
+    internal class OfficePacksListSplitFileSaver : IOfficePacksListSaver
     {
         private List<OfficePacks> _officePacksList = null;
         private string _saveFileName = "";

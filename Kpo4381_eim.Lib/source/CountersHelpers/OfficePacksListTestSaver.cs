@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kpo4381.eim.Lib
 {
-    public class OfficePacksListTestSaver : IOfficePacksListSaver
+    internal class OfficePacksListTestSaver : IOfficePacksListSaver
     {
         private List<OfficePacks> _officePacksList = null;
 

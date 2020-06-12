@@ -16,7 +16,7 @@ namespace Kpo4381.eim.Lib
         FileNotExists = -2,
         GeneralError = -100
     }
-    public class OfficePacksListSplitFileLoader : IOfficePacksListLoader
+    internal class OfficePacksListSplitFileLoader : IOfficePacksListLoader
     {
 
         private readonly string _dataFileName = "";

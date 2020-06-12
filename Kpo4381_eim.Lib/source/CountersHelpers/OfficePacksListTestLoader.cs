@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kpo4381.eim.Lib
 {
-    public class OfficePacksListTestLoader: IOfficePacksListLoader
+    internal class OfficePacksListTestLoader: IOfficePacksListLoader
     {
         public OfficePacksListTestLoader()
         {
