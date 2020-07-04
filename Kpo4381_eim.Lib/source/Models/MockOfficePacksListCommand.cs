@@ -22,13 +22,8 @@ namespace Kpo4381.eim.Lib
         }
         public void Execute()
         {
-           // throw new NotImplementedException();
-           // throw new Exception("Неправильные входные параметры");
-
-            //Фигурная скобка для ограничения области видимости переменной employee
             {
                 OfficePacks officepacks = new OfficePacks()
-                //данная констуркция позволяет инициализировать объект при его создании
                 {
                     name = "Office",
                     vendor = "Microsoft",

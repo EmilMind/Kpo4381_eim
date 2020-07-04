@@ -39,9 +39,7 @@ namespace Kpo4381.eim.Main
                 IOCcontainer.container.Resolve<IOfficePacksListLoader>().SetOnStatusChanged(updateStatus); 
                 IOfficePacksListLoader loader = IOCcontainer.container.Resolve<IOfficePacksListLoader>();                
                 loader.Execute();
-                officePacksList = loader.officePacksList;
-                bsOfficePacks.DataSource = officePacksList;
-                dgvMockOfficePacksListCommand.DataSource = bsOfficePacks;
+                dgvMockOfficePacksListCommand.DataSource = loader.officePacksList;
             }
             //обработка исключения "Метод не реализован"
             catch (NotImplementedException ex)
@@ -63,6 +61,7 @@ namespace Kpo4381.eim.Main
             OfficePacks officePacks = (bsOfficePacks.Current as OfficePacks);
             frmOfficePacks.SetOfficePacks(officePacks);
             frmOfficePacks.ShowDialog();
+            
         }
 
         private void mnLogPath_Click(object sender, EventArgs e)
@@ -80,5 +79,28 @@ namespace Kpo4381.eim.Main
             IOfficePacksListSaver saver = IOCcontainer.container.Resolve<IOfficePacksListSaver>();
             saver.SaveFile(officePacksList);
         }
+
+        private void ConvertButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IOfficePacksListLoader loader = IOCcontainer.container.Resolve<IOfficePacksListLoader>();
+                loader.convertPlz();
+                dgvMockOfficePacksListCommand.Refresh();
+            }
+            //обработка исключения "Метод не реализован"
+            catch (NotImplementedException ex)
+            {
+                MessageBox.Show("Ошибка №1: " + ex.Message);
+            }
+            //обработка остальных исключений
+            catch (Exception ex)
+            {
+                LogUtility.ErrorLog(ex);
+                MessageBox.Show("Ошибка №2: " + ex.Message);
+            }
+        }
+
     }
 }
+

@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpo4381_eim.Main", "Kpo4381
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpo4381_eim.Lib", "Kpo4381_eim.Lib\Kpo4381_eim.Lib.csproj", "{30F5A632-4C19-40B3-B373-497DEDDBDCCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpo4381_eim.Tests", "Kpo4381_eim.Tests\Kpo4381_eim.Tests.csproj", "{1A85199F-0424-409D-9980-D40ECBD1DB56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpo4381_eim.UnitTest", "Kpo4381_eim.UnitTest\Kpo4381_eim.UnitTest.csproj", "{3237E2C7-7992-4EA4-8712-E4A39C877807}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{30F5A632-4C19-40B3-B373-497DEDDBDCCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30F5A632-4C19-40B3-B373-497DEDDBDCCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30F5A632-4C19-40B3-B373-497DEDDBDCCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A85199F-0424-409D-9980-D40ECBD1DB56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A85199F-0424-409D-9980-D40ECBD1DB56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A85199F-0424-409D-9980-D40ECBD1DB56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A85199F-0424-409D-9980-D40ECBD1DB56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3237E2C7-7992-4EA4-8712-E4A39C877807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3237E2C7-7992-4EA4-8712-E4A39C877807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3237E2C7-7992-4EA4-8712-E4A39C877807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3237E2C7-7992-4EA4-8712-E4A39C877807}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

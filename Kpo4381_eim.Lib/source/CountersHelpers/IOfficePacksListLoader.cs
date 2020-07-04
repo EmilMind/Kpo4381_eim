@@ -8,6 +8,7 @@ namespace Kpo4381.eim.Lib
         LoadStatus status { get; }
         Delegate.OnStatusChangedDelegate onStatusChangedDelegate { get; }
         void SetOnStatusChanged(Delegate.OnStatusChangedDelegate onStatusChanged);
+        void convertPlz();
         void Execute();
     }
 }

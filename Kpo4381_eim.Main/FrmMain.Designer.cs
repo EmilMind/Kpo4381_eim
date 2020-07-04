@@ -39,8 +39,9 @@
             this.mnLogPath = new System.Windows.Forms.ToolStripMenuItem();
             this.mnDataFileName = new System.Windows.Forms.ToolStripMenuItem();
             this.SStatus = new System.Windows.Forms.StatusStrip();
-            this.dgvMockOfficePacksListCommand = new System.Windows.Forms.DataGridView();
             this.SSlblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dgvMockOfficePacksListCommand = new System.Windows.Forms.DataGridView();
+            this.ConvertButton = new System.Windows.Forms.Button();
             this.MMenu.SuspendLayout();
             this.SStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockOfficePacksListCommand)).BeginInit();
@@ -67,7 +68,7 @@
             this.mnOpen,
             this.nmSaver});
             this.mmFile.Name = "mmFile";
-            this.mmFile.Size = new System.Drawing.Size(83, 29);
+            this.mmFile.Size = new System.Drawing.Size(83, 32);
             this.mmFile.Text = "1&.Файл";
             // 
             // mnExit
@@ -96,7 +97,7 @@
             this.mmOfficePacks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnOpenOfficePacks});
             this.mmOfficePacks.Name = "mmOfficePacks";
-            this.mmOfficePacks.Size = new System.Drawing.Size(180, 29);
+            this.mmOfficePacks.Size = new System.Drawing.Size(180, 32);
             this.mmOfficePacks.Text = "2&.Офисные пакеты";
             // 
             // mnOpenOfficePacks
@@ -112,7 +113,7 @@
             this.mnLogPath,
             this.mnDataFileName});
             this.mmSettings.Name = "mmSettings";
-            this.mmSettings.Size = new System.Drawing.Size(130, 29);
+            this.mmSettings.Size = new System.Drawing.Size(130, 32);
             this.mmSettings.Text = "3&.Настройки";
             // 
             // mnLogPath
@@ -134,12 +135,17 @@
             this.SStatus.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.SStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SSlblStatus});
-            this.SStatus.Location = new System.Drawing.Point(0, 480);
+            this.SStatus.Location = new System.Drawing.Point(0, 486);
             this.SStatus.Name = "SStatus";
             this.SStatus.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.SStatus.Size = new System.Drawing.Size(777, 28);
+            this.SStatus.Size = new System.Drawing.Size(777, 22);
             this.SStatus.TabIndex = 1;
             this.SStatus.Text = "statusStrip1";
+            // 
+            // SSlblStatus
+            // 
+            this.SSlblStatus.Name = "SSlblStatus";
+            this.SSlblStatus.Size = new System.Drawing.Size(0, 15);
             // 
             // dgvMockOfficePacksListCommand
             // 
@@ -151,16 +157,22 @@
             this.dgvMockOfficePacksListCommand.Size = new System.Drawing.Size(751, 323);
             this.dgvMockOfficePacksListCommand.TabIndex = 2;
             // 
-            // SSlblStatus
+            // ConvertButton
             // 
-            this.SSlblStatus.Name = "SSlblStatus";
-            this.SSlblStatus.Size = new System.Drawing.Size(0, 21);
+            this.ConvertButton.Location = new System.Drawing.Point(12, 408);
+            this.ConvertButton.Name = "ConvertButton";
+            this.ConvertButton.Size = new System.Drawing.Size(751, 75);
+            this.ConvertButton.TabIndex = 3;
+            this.ConvertButton.Text = "CANвертация";
+            this.ConvertButton.UseVisualStyleBackColor = true;
+            this.ConvertButton.Click += new System.EventHandler(this.ConvertButton_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 508);
+            this.Controls.Add(this.ConvertButton);
             this.Controls.Add(this.dgvMockOfficePacksListCommand);
             this.Controls.Add(this.SStatus);
             this.Controls.Add(this.MMenu);
@@ -193,6 +205,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnDataFileName;
         private System.Windows.Forms.ToolStripMenuItem nmSaver;
         private System.Windows.Forms.ToolStripStatusLabel SSlblStatus;
+        private System.Windows.Forms.Button ConvertButton;
     }
 }
 

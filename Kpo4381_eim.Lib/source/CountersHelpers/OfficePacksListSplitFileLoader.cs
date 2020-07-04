@@ -20,9 +20,24 @@ namespace Kpo4381.eim.Lib
     {
 
         private readonly string _dataFileName = "";
+        private bool usd = false;
         private List<OfficePacks> _officePacksList = null;
         private LoadStatus _status = LoadStatus.None;
 
+
+        public void convertPlz()
+        {
+            if (usd)
+            {
+                _officePacksList = OfficePacksMethodConvertUSD.ConvertPricesToRub(_officePacksList);
+                usd = false;
+            }
+            else
+            {
+                _officePacksList = OfficePacksMethodConvertUSD.ConvertPricesToUsd(_officePacksList);
+                usd = true;
+            }
+        }
         public List<OfficePacks> officePacksList
         {
             get { return _officePacksList; }
@@ -95,6 +110,12 @@ namespace Kpo4381.eim.Lib
                     }
 
                 }
+            }
+            if (_officePacksList.Count == 0)
+            {
+                _status = LoadStatus.GeneralError;
+                onStatusChangedDelegate?.Invoke(_status);
+                throw new Exception("Содержимое файла некорректно");
             }
             _status = LoadStatus.Success;
             onStatusChangedDelegate?.Invoke(_status);

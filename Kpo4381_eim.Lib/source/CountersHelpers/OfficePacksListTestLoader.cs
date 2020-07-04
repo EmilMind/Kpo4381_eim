@@ -14,12 +14,27 @@ namespace Kpo4381.eim.Lib
 
         }
         private readonly string _dataFileName = "";
+        private bool usd = false;
         private List<OfficePacks> _officepacksList = null;
         private LoadStatus _status = LoadStatus.None;
                 
         public LoadStatus status
         {
             get { return _status; }
+        }
+
+        public void convertPlz()
+        {
+            if (usd)
+            {
+                _officepacksList = OfficePacksMethodConvertUSD.ConvertPricesToRub(_officepacksList);
+                usd = false;
+            }
+            else
+            {
+                _officepacksList = OfficePacksMethodConvertUSD.ConvertPricesToUsd(_officepacksList);
+                usd = true;
+            }
         }
 
         public List<OfficePacks> officePacksList
